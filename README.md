@@ -8,7 +8,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 
 #Simple APplicationProject RUn
+
 Databese create-> create database simple; and use database;
+
 BAck end download and eclipse open-> import MavenProject -> src/main/resource/applicatoionproperites->databsae name sql root and password checked-> main appliaction run (src/main/java/SimpleAPplication package open-> com.project.simpleApplicatiton-Run project)->host on project server start
 
 Front end downlod open cmd-> code .-> open visualstudiocode-> terminal->ng serve (open)->local host (http:/localhost/4200) open run on project.
