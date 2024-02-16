@@ -1,0 +1,58 @@
+<br /><br />
+<div class="main customer-login">
+    <h1>Customer SignIn</h1>
+    <br />
+     <form [formGroup]="LoginForm">
+  
+       <div class="item-icon">
+            <div class="icon">
+            </div>
+            <input type="text" id="email" formControlName="email" placeholder="Email">
+        </div>
+        <div *ngIf="customerLoginForm.controls['email'].invalid && (customerLoginForm.controls['email'].dirty || customerLoginForm.controls['email'].touched)"
+            class="error-message">
+            <div *ngIf="customerLoginForm.controls['email'].errors?.['required']">
+                Email should not blank
+            </div>
+            <div *ngIf="customerLoginForm.controls['email'].errors?.['pattern']">
+                Enter Valid email
+            </div>
+        </div>
+
+
+        <br />
+        <div class="item-icon">
+            <div class="icon">
+            </div>
+            <input type="password" formControlName="password" placeholder="Password">
+        </div>
+        <!-- Password Validation code -->
+        <div *ngIf="LoginForm.controls['password'].invalid && (LoginForm.controls['password'].dirty || LoginForm.controls['password'].touched)"
+            class="error-message">
+            <div *ngIf="LoginForm.controls['password'].errors?.['required']">
+                Password should not blank
+            </div>
+            <div *ngIf="LoginForm.controls['password'].errors?.['maxlength']">
+                Maximum 8 character required
+            </div> 
+            <div *ngIf="customerLoginForm.controls['password'].errors?.['minlength']">
+                Minium 8 character required
+            </div>
+        </div>
+        <!--End of Password Validation-->
+            <br />
+
+            <div>
+                <button (click)="signIn()" mat-raised-button color="primary"
+                    [disabled]="!LoginForm.controls['password'].valid || !LoginForm.controls['email'].valid">SignIn</button>
+            </div>
+        </form>
+    <br>
+    <div class="new-user-register">
+        Don`t have an account yet? <span class="sign-up" (click)="routeToNewUser()">Sign up Now</span>
+    </div>
+    <br />
+    <div class="sign-up" (click)="routeToForgotPassword()">
+        forgot password ?
+    </div>
+    <br />
